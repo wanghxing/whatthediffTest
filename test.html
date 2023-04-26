@@ -3,6 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+  <style>
+    .test {
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
 
@@ -14,10 +19,9 @@
 	<script>
 		let oTest = document.getElementsByClassName('test')[0]
 		oTest.style.color = 'red'
-
-    $('.test').on('click', function(){
-      console.log('输出错误')
-    })
+    oTest.onclick = function(){
+      alert('111')
+    }
 	</script>
 </body>
 </html>
