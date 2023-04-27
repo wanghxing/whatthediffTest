@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="canvas"></div>
+
+  <script>
+  window.onload=function(){
+    // 画个红色的圆
+    let oCanvas = document.getElementById('canvas');
+    let ctx = oCanvas.getContext('2d');
+    drawCircle(ctx, 100, 100, 50);
+    function drawCircle(ctx, x, y, r) {
+      ctx.beginPath();
+      ctx.arc(x, y, r, 0, 2 * Math.PI);
+      ctx.fillStyle = 'red';
+      ctx.fill();
+    }
+  }
+  </script>
+</body>
+</html>
