@@ -7,12 +7,12 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="canvas"></div>
+  <canvas id="myCanvas"></canvas>
 
   <script>
   window.onload=function(){
     // 画个红色的圆
-    let oCanvas = document.getElementById('canvas');
+    let oCanvas = document.getElementById('myCanvas');
     let ctx = oCanvas.getContext('2d');
     drawCircle(ctx, 100, 100, 50);
     function drawCircle(ctx, x, y, r) {
