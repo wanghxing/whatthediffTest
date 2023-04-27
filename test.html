@@ -17,17 +17,64 @@
   <div class="test">
 		test_002
 	</div>
+
+  <div id="content">aaaa</div>
 	
 
 	<script>
-		let oTest = document.getElementsByClassName('test')
-		for (let i = 0; i < oTest.length; i++) {
-      const ele = oTest[i];
-      ele.style.color = 'red'
-      ele.onclick = function(){
-        alert('111-'+ele.innerHTML)
+		window.onload=function(){
+      let oTest = document.getElementsByClassName('test')
+      for (let i = 0; i < oTest.length; i++) {
+        const ele = oTest[i];
+        ele.style.color = rgb()
+        ele.onclick = function(){
+          alert('111-'+ele.innerText)
+          console.log(getHeight(ele))
+        }
+      }
+
+      function rgb(){//rgb颜色随机
+        const r = Math.floor(Math.random()*256);
+        const g = Math.floor(Math.random()*256);
+        const b = Math.floor(Math.random()*256);
+        return `rgb(${r},${g},${b})`;
+      }
+
+      // 获取元素的高度
+      function getHeight(ele){
+        return ele.offsetHeight
       }
     }
+
+    // Convert HTML string to DOM object
+    function parseStringAsHtml(content, selector) {
+    let element = document.querySelector(selector);
+    element.innerHTML = content;
+    }
+
+    parseStringAsHtml(`<h1>Hello, world!</h1>`, '#content');
+
+    // Convert DOM object to HTML string
+    function parseHtmlAsString(element) {
+      let content = element.innerHTML;
+      element.innerHTML = '123';
+      return content;
+    }
+    parseHtmlAsString(document.querySelector('#content'));
+
+    // Date validation
+    function validateDate(date) {
+      let re = /^\d{4}-\d{2}-\d{2}$/;
+      return re.test(date);
+    }
+    console.log(validateDate('2018-01-01'))
+
+    // 来一个随机的数字
+    function getRandomNumber(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    console.log(getRandomNumber(0, 100))
+
 	</script>
 </body>
 </html>
