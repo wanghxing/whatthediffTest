@@ -12,15 +12,21 @@
 <body>
 
 	<div class="test">
-		test
+		test_001
+	</div>
+  <div class="test">
+		test_002
 	</div>
 	
 
 	<script>
-		let oTest = document.getElementsByClassName('test')[0]
-		oTest.style.color = 'red'
-    oTest.onclick = function(){
-      alert('111')
+		let oTest = document.getElementsByClassName('test')
+		for (let i = 0; i < oTest.length; i++) {
+      const ele = oTest[i];
+      ele.style.color = 'red'
+      ele.onclick = function(){
+        alert('111-'+ele.innerHTML)
+      }
     }
 	</script>
 </body>
