@@ -14,6 +14,9 @@
 	<div id="test">
 		test2
 	</div>
+
+  <div class="time"></div>
+  <div id="time1"></div>
 	
 
 	<script>
@@ -28,7 +31,29 @@
     let oWeek = oDate.getDay()
     console.log(oWeek)
 
+    // 获取倒计时
+    let oTimer = setInterval(function(){
+      let oDate = new Date()
+      let oHour = oDate.getHours()
+      let oMin = oDate.getMinutes()
+      let oSec = oDate.getSeconds()
+      oHour = oHour < 10 ? '0' + oHour : oHour
+      oMin = oMin < 10 ? '0' + oMin : oMin
+      oSec = oSec < 10 ? '0' + oSec : oSec
+      document.getElementById('time').innerHTML = `${oHour}:${oMin}:${oSec}`
+      },1000)
     
+    // 获取倒计时到天
+    setInterval(function(){
+      let oDate = new Date()
+      let oYear = oDate.getFullYear()
+      let oMonth = oDate.getMonth()
+      let oDay = oDate.getDate()
+      oDay = oDay < 10 ? '0' + oDay : oDay
+      oMonth = oMonth < 10 ? '0' + oMonth : oMonth
+      oYear = oYear < 10 ? '0' + oYear : oYear
+      document.getElementById('time1').innerHTML = `${oYear}-${oMonth}-${oDay}`
+    },1000)
 
 
     
