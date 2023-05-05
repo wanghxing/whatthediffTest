@@ -21,6 +21,15 @@
       ctx.fillStyle = 'red';
       ctx.fill();
     }
+    // 画个蓝色的圆环，圆环宽度为10
+    drawCircleRing(ctx, 100, 100, 50);
+    function drawCircleRing(ctx, x, y, r) {
+      ctx.beginPath();
+      ctx.arc(x, y, r-5, 0, 2 * Math.PI);
+      ctx.strokeStyle = 'blue';
+      // ctx.lineWidth = 10;
+      ctx.stroke();
+    }
   }
   
   </script>
